@@ -17,17 +17,18 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">Devices</a></li>
-                    <li><a href="#">Commands</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="#" id="home-btn" class="active">Home</a></li>
+                    <li><a href="#" id="devices-btn">Devices</a></li>
+                    <li><a href="#" id="commands-btn">Commands</a></li>
+                    <li><a href="#" id="about-btn">About</a></li>
+                    <li><a href="#" id="logout-btn">Logout</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
-            <section class="dashboard">
+            <!-- Home Section (Default) -->
+            <section id="home-section" class="dashboard section-active">
                 <div class="status-bar">
                     <div class="status connected">
                         <span>CONNECTED</span>
@@ -104,9 +105,143 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Devices Section -->
+            <section id="devices-section" class="dashboard">
+                <div class="status-bar">
+                    <div class="status connected">
+                        <span>CONNECTED</span>
+                        <div class="pulse"></div>
+                    </div>
+                    <div class="device-id">Device Manager</div>
+                </div>
+
+                <div class="control-panel">
+                    <div class="panel-header">
+                        <h2>Connected Devices</h2>
+                        <div class="terminal-icon">></div>
+                    </div>
+
+                    <div class="devices-list">
+                        <div class="device-card">
+                            <div class="device-icon">📱</div>
+                            <h3>MOB-7H4X0R-1337</h3>
+                            <p>Android 12 | Last active: Now</p>
+                            <div class="device-status online">ONLINE</div>
+                        </div>
+
+                        <div class="device-card">
+                            <div class="device-icon">💻</div>
+                            <h3>PC-XM4ST3R-5566</h3>
+                            <p>Windows 11 | Last active: 5 mins ago</p>
+                            <div class="device-status offline">OFFLINE</div>
+                        </div>
+
+                        <div class="device-card">
+                            <div class="device-icon">📱</div>
+                            <h3>MOB-T3ST3R-8899</h3>
+                            <p>iOS 15 | Last active: 2 hours ago</p>
+                            <div class="device-status online">ONLINE</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Commands Section -->
+            <section id="commands-section" class="dashboard">
+                <div class="status-bar">
+                    <div class="status connected">
+                        <span>CONNECTED</span>
+                        <div class="pulse"></div>
+                    </div>
+                    <div class="device-id">Command Center</div>
+                </div>
+
+                <div class="control-panel">
+                    <div class="panel-header">
+                        <h2>Predefined Commands</h2>
+                        <div class="terminal-icon">></div>
+                    </div>
+
+                    <div class="commands-list">
+                        <div class="command-card" onclick="executeCommand('get-device-info')">
+                            <h3>Get Device Info</h3>
+                            <p>Retrieve detailed device information</p>
+                            <div class="command-code">get-device-info</div>
+                        </div>
+
+                        <div class="command-card" onclick="executeCommand('screenshot')">
+                            <h3>Take Screenshot</h3>
+                            <p>Capture device screen</p>
+                            <div class="command-code">screenshot</div>
+                        </div>
+
+                        <div class="command-card" onclick="executeCommand('keylogger --start')">
+                            <h3>Start Keylogger</h3>
+                            <p>Begin recording keystrokes</p>
+                            <div class="command-code">keylogger --start</div>
+                        </div>
+
+                        <div class="command-card" onclick="executeCommand('location')">
+                            <h3>Get Location</h3>
+                            <p>Retrieve device GPS coordinates</p>
+                            <div class="command-code">location</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about-section" class="dashboard">
+                <div class="status-bar">
+                    <div class="status connected">
+                        <span>CONNECTED</span>
+                        <div class="pulse"></div>
+                    </div>
+                    <div class="device-id">About DarkHawk RAT</div>
+                </div>
+
+                <div class="control-panel">
+                    <div class="panel-header">
+                        <h2>System Information</h2>
+                        <div class="terminal-icon">></div>
+                    </div>
+
+                    <div class="about-content">
+                        <div class="about-logo">
+                            <div class="logo-text">DarkHawk</div>
+                            <div class="logo-version">v3.1.4</div>
+                        </div>
+
+                        <div class="about-details">
+                            <div class="detail-item">
+                                <span>Version:</span>
+                                <span>3.1.4 (Stable)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span>License:</span>
+                                <span>Private (Unauthorized distribution prohibited)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span>Developer:</span>
+                                <span>Shadow Syndicate</span>
+                            </div>
+                            <div class="detail-item">
+                                <span>Last Update:</span>
+                                <span>2023-11-15</span>
+                            </div>
+                        </div>
+
+                        <div class="about-warning">
+                            <h3>⚠️ WARNING</h3>
+                            <p>This software is for authorized penetration testing and educational purposes only. Unauthorized access to computer systems is illegal.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
 
     <script src="script.js"></script>
 </body>
-</html>
+    </html>
