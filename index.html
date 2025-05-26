@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkHawk RAT - Controller</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+</head>
+<body>
+    <div class="matrix-bg"></div>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="logo-text">DarkHawk</span>
+                <span class="logo-cursor">_</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Devices</a></li>
+                    <li><a href="#">Commands</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="dashboard">
+                <div class="status-bar">
+                    <div class="status connected">
+                        <span>CONNECTED</span>
+                        <div class="pulse"></div>
+                    </div>
+                    <div class="device-id">Device: MOB-7H4X0R-1337</div>
+                </div>
+
+                <div class="control-panel">
+                    <div class="panel-header">
+                        <h2>Remote Control Panel</h2>
+                        <div class="terminal-icon">></div>
+                    </div>
+
+                    <div class="panel-grid">
+                        <div class="control-card" id="camera-control">
+                            <div class="card-icon">📷</div>
+                            <h3>Camera</h3>
+                            <p>Access device camera</p>
+                            <button class="hacker-btn" onclick="toggleCamera()">Activate</button>
+                            <div class="camera-feed hidden" id="camera-feed">
+                                <div class="feed-placeholder"></div>
+                            </div>
+                        </div>
+
+                        <div class="control-card" id="file-explorer">
+                            <div class="card-icon">📁</div>
+                            <h3>File Explorer</h3>
+                            <p>Browse device files</p>
+                            <button class="hacker-btn" onclick="accessFiles()">Access</button>
+                            <div class="file-list hidden" id="file-list">
+                                <!-- Files will appear here -->
+                            </div>
+                        </div>
+
+                        <div class="control-card" id="sms-control">
+                            <div class="card-icon">💬</div>
+                            <h3>Messages</h3>
+                            <p>View and send SMS</p>
+                            <button class="hacker-btn" onclick="accessSMS()">Access</button>
+                            <div class="sms-list hidden" id="sms-list">
+                                <!-- Messages will appear here -->
+                            </div>
+                        </div>
+
+                        <div class="control-card" id="flashlight-control">
+                            <div class="card-icon">🔦</div>
+                            <h3>Flashlight</h3>
+                            <p>Control device flashlight</p>
+                            <button class="hacker-btn" onclick="toggleFlashlight()">Toggle</button>
+                            <div class="status-indicator" id="flashlight-status">OFF</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <h3>Command Terminal</h3>
+                        <div class="terminal-controls">
+                            <span class="control red"></span>
+                            <span class="control yellow"></span>
+                            <span class="control green"></span>
+                        </div>
+                    </div>
+                    <div class="terminal-body" id="terminal">
+                        <div class="terminal-line">DarkHawk RAT v3.1.4 - Initializing...</div>
+                        <div class="terminal-line">> Establishing secure connection...</div>
+                        <div class="terminal-line success">> Connection established with device: MOB-7H4X0R-1337</div>
+                        <div class="terminal-line">> Type 'help' for command list</div>
+                        <div class="terminal-input-line">
+                            <span class="prompt">root@darkhawk:~#</span>
+                            <input type="text" class="terminal-input" id="command-input" autofocus>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
